@@ -2,13 +2,12 @@ package com.example.mihai.tourguide;
 
 public class Attraction {
 
-    private String Name, Description, WorkingHours, Location, Contact, Website;
-    private int imageResourceId;
+    private int Name, Description, WorkingHours, Location, Contact, Website, imageResourceId;
 
     public Attraction() {
     }
 
-    public Attraction(String name, String description, String workingHours, String location, String website, int imageResourceId) {
+    public Attraction(int name, int description, int workingHours, int location, int website, int imageResourceId) {
         Name = name;
         Description = description;
         WorkingHours = workingHours;
@@ -17,7 +16,7 @@ public class Attraction {
         this.imageResourceId = imageResourceId;
     }
 
-    public Attraction(String name, String description, String workingHours, String location, String contact, String website, int imageResourceId) {
+    public Attraction(int name, int description, int workingHours, int location, int contact, int website, int imageResourceId) {
         Name = name;
         Description = description;
         WorkingHours = workingHours;
@@ -27,51 +26,51 @@ public class Attraction {
         this.imageResourceId = imageResourceId;
     }
 
-    public String getName() {
+    public int getName() {
         return Name;
     }
 
-    public void setName(String name) {
+    public void setName(int name) {
         Name = name;
     }
 
-    public String getDescription() {
+    public int getDescription() {
         return Description;
     }
 
-    public void setDescription(String description) {
+    public void setDescription(int description) {
         Description = description;
     }
 
-    public String getWorkingHours() {
+    public int getWorkingHours() {
         return WorkingHours;
     }
 
-    public void setWorkingHours(String workingHours) {
+    public void setWorkingHours(int workingHours) {
         WorkingHours = workingHours;
     }
 
-    public String getLocation() {
+    public int getLocation() {
         return Location;
     }
 
-    public void setLocation(String location) {
+    public void setLocation(int location) {
         Location = location;
     }
 
-    public String getContact() {
+    public int getContact() {
         return Contact;
     }
 
-    public void setContact(String contact) {
+    public void setContact(int contact) {
         Contact = contact;
     }
 
-    public String getWebsite() {
+    public int getWebsite() {
         return Website;
     }
 
-    public void setWebsite(String website) {
+    public void setWebsite(int website) {
         Website = website;
     }
 

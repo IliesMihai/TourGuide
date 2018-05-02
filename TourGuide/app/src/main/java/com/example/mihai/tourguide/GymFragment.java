@@ -27,53 +27,53 @@ public class GymFragment extends Fragment {
 
         final ArrayList<Attraction> gym = new ArrayList<>();
 
-        gym.add(new Attraction("Evolve Fitness Club",
-                "Visit our website for more details",
-                "7AM-10PM", "Strada Plopilor 72, Cluj-Napoca 400000",
-                "0364 407 227",
-                "https://evolve-fitness.ro/?gclid=CjwKCAjwlIvXBRBjEiwATWAQInS4oVctM4vJJ1sjoC5OFUb1FBIThZ1h3B8E8HKspuugWKrbkei0ghoCxk0QAvD_BwE",
+        gym.add(new Attraction(R.string.evolve_gym_name,
+                R.string.evolve_gym_description,
+                R.string.evolve_gym_WH, R.string.evolve_gym_address,
+                R.string.evolve_gym_contact,
+                R.string.evolve_gym_website,
                 R.drawable.evolve));
 
-        gym.add(new Attraction("Gimmy Gym",
-                "Visit our website for more details",
-                "7AM-11PM", "Strada Nicolae Pascaly, Cluj-Napoca",
-                "0734 417 777",
-                "http://www.gimmy.ro/",
+        gym.add(new Attraction(R.string.gimmy_gym_name,
+                R.string.gimmy_gym_description,
+                R.string.gimmy_gym_WH, R.string.gimmy_gym_address,
+                R.string.gimmy_gym_contact,
+                R.string.gimmy_gym_website,
                 R.drawable.gimmy));
 
-        gym.add(new Attraction("T Gym",
-                "Visit our website for more details",
-                "8AM-11PM", "Strada Mikó Imre 13, Cluj-Napoca 400499",
-                "0752 925 031",
-                "http://tgym.ro/",
+        gym.add(new Attraction(R.string.t_gym_name,
+                R.string.t_gym_description,
+                R.string.t_gym_WH, R.string.t_gym_address,
+                R.string.t_gym_contact,
+                R.string.t_gym_website,
                 R.drawable.tgym));
 
-        gym.add(new Attraction("Olympus Center",
-                "Visit our website for more details",
-                "7AM-10PM", "Strada Victor Babeș 33, Cluj-Napoca 400012",
-                "0364 116 039",
-                "http://www.olympuscenter.ro/",
+        gym.add(new Attraction(R.string.olympus_gym_name,
+                R.string.olympus_gym_description,
+                R.string.olympus_gym_WH, R.string.olympus_gym_address,
+                R.string.olympus_gym_contact,
+                R.string.olympus_gym_website,
                 R.drawable.olympus));
 
-        gym.add(new Attraction("Big Fitness",
-                "Visit our website for more details",
-                "6AM-11PM", "Bucegi St, Cluj-Napoca",
-                "0735 890 000",
-                "http://www.bigfitness.ro/",
+        gym.add(new Attraction(R.string.bigfitness_gym_name,
+                R.string.bigfitness_gym_descritpion,
+                R.string.bigfitness_gym_WH, R.string.bigfitness_gym_address,
+                R.string.bigfitness_gym_contact,
+                R.string.bigfitness_gym_website,
                 R.drawable.bigfitness));
 
-        gym.add(new Attraction("Express Fitness",
-                "Visit our website for more details",
-                "8AM-10PM", "Strada Baba Novac 26A, Cluj-Napoca 400080",
-                "0753 513 560",
-                "http://www.express-fitness.ro/",
+        gym.add(new Attraction(R.string.expressfitness_gym_name,
+                R.string.expressfitness_gym_description,
+                R.string.expressfitness_gym_WH, R.string.expressfitness_gym_address,
+                R.string.expressfitness_gym_contact,
+                R.string.expressfitness_gym_website,
                 R.drawable.expressfitness));
 
-        gym.add(new Attraction("18 Gym",
-                "Visit our website for more details",
-                "7AM-10PM", "Bulevardul Nicolae Titulescu 2, Cluj-Napoca 400000",
-                "0753 609 943",
-                "http://cluj.18gym.ro/",
+        gym.add(new Attraction(R.string.eighteengym_gym_name,
+                R.string.eighteengym_gym_description,
+                R.string.eighteengym_gym_WH, R.string.eighteengym_gym_address,
+                R.string.eighteengym_gym_contact,
+                R.string.eighteengym_gym_webiste,
                 R.drawable.eigthteengym));
 
         AttractionAdapter adapter = new AttractionAdapter(getActivity(), gym);
@@ -87,12 +87,12 @@ public class GymFragment extends Fragment {
                 Attraction attraction = gym.get(position);
                 Intent intent = new Intent(getActivity(), DetailView.class);
                 Bundle bundle = new Bundle();
-                bundle.putString("NAME", attraction.getName());
-                bundle.putString("DESCRIPTION", attraction.getDescription());
-                bundle.putString("WORKHOURS", attraction.getWorkingHours());
-                bundle.putString("LOCATION", attraction.getLocation());
-                bundle.putString("WEBSITE", attraction.getWebsite());
-                bundle.putString("CONTACT", attraction.getContact());
+                bundle.putInt("NAME", attraction.getName());
+                bundle.putInt("DESCRIPTION", attraction.getDescription());
+                bundle.putInt("WORKHOURS", attraction.getWorkingHours());
+                bundle.putInt("LOCATION", attraction.getLocation());
+                bundle.putInt("WEBSITE", attraction.getWebsite());
+                bundle.putInt("CONTACT", attraction.getContact());
                 bundle.putInt("IMAGE", attraction.getImageResourceId());
                 intent.putExtras(bundle);
                 startActivity(intent);

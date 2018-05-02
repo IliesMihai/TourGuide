@@ -13,8 +13,7 @@ public class DetailView extends AppCompatActivity {
 
     ImageView imageView;
     TextView descriptionTxt, workHoursTxt, locationTxt, contactTxt, nameTxt;
-    String name, description, workHour, location, contact, website;
-    int imageResource;
+    int name, description, workHour, location, contact, website, imageResource;
 
     @SuppressLint("RestrictedApi")
     @Override
@@ -27,12 +26,12 @@ public class DetailView extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
 
         if (bundle != null) {
-            name = bundle.getString("NAME");
-            description = bundle.getString("DESCRIPTION");
-            workHour = bundle.getString("WORKHOURS");
-            location = bundle.getString("LOCATION");
-            contact = bundle.getString("CONTACT");
-            website = bundle.getString("WEBSITE");
+            name = bundle.getInt("NAME");
+            description = bundle.getInt("DESCRIPTION");
+            workHour = bundle.getInt("WORKHOURS");
+            location = bundle.getInt("LOCATION");
+            contact = bundle.getInt("CONTACT");
+            website = bundle.getInt("WEBSITE");
             imageResource = bundle.getInt("IMAGE");
         }
 
@@ -52,7 +51,7 @@ public class DetailView extends AppCompatActivity {
         locationTxt.setText(location);
 
         contactTxt = findViewById(R.id.attraction_contact);
-        if (contact != null) {
+        if (contact != 0) {
             contactTxt.setText(contact);
         } else {
             contactTxt.setVisibility(View.GONE);
@@ -86,7 +85,7 @@ public class DetailView extends AppCompatActivity {
 
     public void accessWebSite(View view) {
 
-        String url = website.toString();
+        String url = getString(website);
 
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(Uri.parse(url));
